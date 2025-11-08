@@ -1,0 +1,175 @@
+.happySection {
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* === ORANGE SECTION === */
+.orangeSection {
+  background-color: #f55d1d;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem 10rem; /* extra bottom for overlap */
+  position: relative;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+/* WhatsApp screenshots placeholders */
+.imageGallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.imgPlaceholder {
+  background-color: #e6e6e6;
+  border-radius: 0.3rem;
+  flex: 1 1 150px;
+  min-width: 150px;
+  max-width: 180px;
+  height: var(--random-height, 8rem);
+  animation: randomHeights 0.5s forwards;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes randomHeights {
+  from {
+    height: 8rem;
+  }
+  to {
+    height: calc(6rem + (10 * var(--i, 1)) * 0.5rem);
+  }
+}
+
+/* === CENTER CIRCLE === */
+.centerCircle {
+  width: 8rem;
+  height: 8rem;
+  background-color: #e6e6e6;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: -4rem;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logoPlaceholder {
+  font-size: 2.5rem;
+  color: #f55d1d;
+}
+
+/* === WHITE SECTION (VIDEOS) === */
+.whiteSection {
+  background-color: #fffaf8;
+  padding: 8rem 2rem 5rem;
+  text-align: center;
+}
+
+/* 1x3 grid */
+.videoRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.videoCard {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 344 / 480;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background-color: #d9d9d9;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease;
+}
+
+.videoCard:hover {
+  transform: translateY(-5px);
+}
+
+.userVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.6rem;
+}
+
+/* Video Info Bar */
+.videoInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: left;
+  padding: 0.8rem 1rem;
+}
+
+.userName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.userCompany {
+  font-size: 0.8rem;
+  color: #ddd;
+  margin: 0;
+}
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .videoRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .centerCircle {
+    width: 6rem;
+    height: 6rem;
+    bottom: -3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .imgPlaceholder {
+    min-width: 120px;
+    max-width: 140px;
+  }
+
+  .videoRow {
+    grid-template-columns: 1fr;
+  }
+
+  .centerCircle {
+    width: 6rem;
+    height: 6rem;
+    bottom: -3rem;
+  }
+}

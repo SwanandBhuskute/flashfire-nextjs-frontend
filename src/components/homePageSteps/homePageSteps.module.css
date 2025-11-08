@@ -1,0 +1,114 @@
+.stepsContainer {
+  background-color: #ffffff;
+  padding: 5rem 2rem;
+  text-align: center;
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+}
+
+/* === Header === */
+.stepsHeader {
+  max-width: 760px;
+  margin: 0 auto 4rem;
+}
+
+.stepsTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.stepsSubtitle {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #ff4c00;
+  font-weight: 500;
+}
+
+/* === Steps Grid === */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+/* === Step Card === */
+.stepCard {
+  background-color: #fff7f4;
+  border: 1.5px solid #f1e1d8;
+  border-radius: 0.4rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.stepCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* === Text === */
+.stepText {
+  margin-bottom: 2rem;
+}
+
+.stepNumber {
+  color: #ff4c00;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.stepHeading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.8rem;
+}
+
+.stepDescription {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* === Icon === */
+.stepIcon {
+  font-size: 3.2rem;
+  color: #ff4c00;
+  align-self: center;
+  opacity: 0.9;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .stepsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stepsTitle {
+    font-size: 1.6rem;
+  }
+
+  .stepHeading {
+    font-size: 1.1rem;
+  }
+
+  .stepIcon {
+    font-size: 2.8rem;
+  }
+}

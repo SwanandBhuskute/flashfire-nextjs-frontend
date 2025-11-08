@@ -1,0 +1,206 @@
+.whySection {
+  background-color: #fff;
+  padding: 5rem 2rem;
+  text-align: center;
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+}
+
+/* === Header === */
+.header {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.highlightAI {
+  color: #ff4c00;
+  font-weight: 600;
+}
+
+.highlightHuman {
+  color: #d64b00;
+  font-weight: 600;
+}
+
+/* === Feature Grid === */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+}
+
+.featureCard {
+  background: #fffdfc;
+  border: 1px solid #f1e4df;
+  border-radius: 0.4rem;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.featureCard h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.8rem;
+}
+
+.featureCard p {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* === Bottom Section === */
+.bottomSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.whatsappCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  background: #fffaf8;
+  border: 1px solid #f1e4df;
+  border-radius: 0.6rem;
+  padding: 2rem;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.whatsappLeft {
+  flex: 1;
+  text-align: left;
+}
+
+.whatsappLeft h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.whatsappLeft p {
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.whatsappButton {
+  background-color: #ff4c00;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.whatsappButton:hover {
+  background-color: #e24300;
+}
+
+/* === Right Panel (Testimonial) === */
+.whatsappRight {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  color: #fff;
+  border-radius: 0.4rem;
+  padding: 1.5rem;
+}
+
+.testimonial {
+  text-align: left;
+  max-width: 70%;
+}
+
+.helpingTag {
+  color: #ff8050;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.quote {
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: #eee;
+  margin-bottom: 1rem;
+}
+
+.author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.authorName {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.authorRole {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.logoWrapper img {
+  filter: brightness(100%);
+}
+
+.authorImage {
+  flex-shrink: 0;
+}
+
+.profileImage {
+  border-radius: 0.4rem;
+  object-fit: cover;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsappCard {
+    flex-direction: column;
+  }
+
+  .whatsappRight {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial {
+    max-width: 100%;
+  }
+}

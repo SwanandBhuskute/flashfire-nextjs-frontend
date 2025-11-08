@@ -1,0 +1,143 @@
+.founderSection {
+  background-color: #fff6f4;
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  padding: 6rem 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === LEFT COLUMN === */
+.leftColumn {
+  flex: 1.2;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #222;
+}
+
+.greeting {
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.highlight {
+  color: #ff4c00;
+  font-weight: 600;
+}
+
+.quote {
+  border-left: 3px solid #ff4c00;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #444;
+}
+
+/* === RIGHT COLUMN === */
+.rightColumn {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pixelTop,
+.pixelBottom {
+  font-size: 6rem;
+  opacity: 0.6;
+  color: #ff4c00;
+}
+
+.founderCard {
+  background: #fff;
+  border: 1px solid #f0d7ce;
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.founderCard:hover {
+  transform: translateY(-3px);
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.founderImage {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #f0d7ce;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ff4c00;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.infoBox {
+  background: #000;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.role {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.linkedinIcon {
+  font-size: 1.2rem;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.linkedinIcon:hover {
+  color: #ff4c00;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .leftColumn {
+    text-align: left;
+  }
+
+  .rightColumn {
+    margin-top: 2rem;
+  }
+}
