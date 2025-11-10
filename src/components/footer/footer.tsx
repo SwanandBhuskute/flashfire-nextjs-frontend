@@ -47,10 +47,20 @@ export default function Footer() {
           <div className={styles.linkRow}>
             <h4>FOLLOW US</h4>
             <div className={styles.socialIcons}>
-              <Link href="#" aria-label="LinkedIn">
+              <Link
+                href="https://www.linkedin.com/company/flashfire-pvt-ltd/"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaLinkedinIn />
               </Link>
-              <Link href="#" aria-label="Instagram">
+              <Link
+                href="https://www.instagram.com/flashfirejobs/"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaInstagram />
               </Link>
             </div>

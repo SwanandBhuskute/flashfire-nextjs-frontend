@@ -1,3 +1,4 @@
+/* === Section Wrapper === */
 .whySection {
   background-color: #fff;
   padding: 5rem 2rem;
@@ -7,19 +8,19 @@
 
 /* === Header === */
 .header {
-  max-width: 800px;
+  width: 55%;
   margin: 0 auto 3rem;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: #111;
   margin-bottom: 1rem;
 }
 
 .subtitle {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #444;
   line-height: 1.6;
 }
@@ -36,19 +37,24 @@
 
 /* === Feature Grid === */
 .featureGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 80rem;
   margin: 0 auto 4rem;
 }
 
 .featureCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #fffdfc;
-  border: 1px solid #f1e4df;
-  border-radius: 0.4rem;
+  border: 1px solid #94959a;
+  border-radius: 0.3rem;
   padding: 2rem;
   text-align: left;
+  height: 21rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
   transition: all 0.2s ease;
 }
@@ -59,7 +65,7 @@
 }
 
 .featureCard h3 {
-  font-size: 1.1rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #111;
   margin-bottom: 0.8rem;
@@ -67,11 +73,28 @@
 
 .featureCard p {
   color: #333;
-  font-size: 0.95rem;
+  font-size: 1.125rem;
   line-height: 1.5;
 }
 
-/* === Bottom Section === */
+.featureCard1 {
+  flex-basis: 40.9%;
+}
+
+.featureCard2,
+.featureCard3 {
+  flex-basis: 28.3%;
+}
+
+.featureCard4 {
+  flex-basis: 24.1%;
+}
+
+.featureCard5,
+.featureCard6 {
+  flex-basis: 36.7%;
+}
+
 .bottomSection {
   display: flex;
   justify-content: center;
@@ -85,60 +108,88 @@
   gap: 2rem;
   background: #fffaf8;
   border: 1px solid #f1e4df;
-  border-radius: 0.6rem;
+  border-radius: 0.8rem;
   padding: 2rem;
   max-width: 1000px;
   width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .whatsappLeft {
   flex: 1;
   text-align: left;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .whatsappLeft h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #111;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .whatsappLeft p {
   color: #333;
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
 }
 
 .whatsappButton {
   background-color: #ff4c00;
   color: #fff;
   border: none;
-  padding: 0.8rem 1.4rem;
+  padding: 0.9rem 1.6rem;
   font-weight: 600;
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  width: fit-content;
+  z-index: 2;
+  position: relative;
 }
 
 .whatsappButton:hover {
   background-color: #e24300;
 }
 
-/* === Right Panel (Testimonial) === */
-.whatsappRight {
-  flex: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #000;
-  color: #fff;
-  border-radius: 0.4rem;
-  padding: 1.5rem;
+.authorImage {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem 0 0 0.5rem;
+  z-index: 1;
 }
 
-.testimonial {
-  text-align: left;
-  max-width: 70%;
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transform: scale(1.15);
+  filter: brightness(0.95);
+}
+
+.whatsappRight {
+  flex: 1.2;
+  background: #000;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .helpingTag {
@@ -149,11 +200,12 @@
 }
 
 .quote {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 400;
   font-style: italic;
   color: #eee;
   margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 .author {
@@ -176,31 +228,138 @@
   filter: brightness(100%);
 }
 
-.authorImage {
-  flex-shrink: 0;
-}
-
-.profileImage {
-  border-radius: 0.4rem;
-  object-fit: cover;
-}
-
 /* === Responsive === */
-@media (max-width: 768px) {
-  .featureGrid {
-    grid-template-columns: 1fr;
+@media (max-width: 1024px) {
+  .header {
+    width: 80%;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
   }
 
   .whatsappCard {
     flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .whatsappLeft {
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .authorImage {
+    position: static;
+    width: 100%;
+    height: 220px;
+    margin-top: 1rem;
+  }
+
+  .profileImage {
+    object-position: top center;
+    border-radius: 0.5rem;
   }
 
   .whatsappRight {
-    flex-direction: column;
+    width: 100%;
     text-align: center;
+    margin-top: 1.5rem;
   }
 
-  .testimonial {
-    max-width: 100%;
+  .quote {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .featureGrid {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .featureCard {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .whatsappCard {
+    padding: 1.5rem;
+  }
+
+  .whatsappLeft {
+    padding: 1.2rem;
+  }
+
+  .authorImage {
+    height: 200px;
+  }
+
+  .whatsappRight {
+    height: auto;
+    padding: 1.5rem 1.2rem;
+  }
+
+  .quote {
+    font-size: 0.95rem;
+  }
+
+  .authorName {
+    font-size: 0.9rem;
+  }
+
+  .authorRole {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whySection {
+    padding: 3rem 1.2rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .whatsappCard {
+    padding: 1.2rem;
+  }
+
+  .whatsappLeft h3 {
+    font-size: 1.2rem;
+  }
+
+  .whatsappLeft p {
+    font-size: 0.9rem;
+  }
+
+  .authorImage {
+    height: 180px;
+  }
+
+  .profileImage {
+    object-position: top center;
+  }
+
+  .quote {
+    font-size: 0.9rem;
   }
 }

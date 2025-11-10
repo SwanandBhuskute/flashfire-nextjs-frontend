@@ -24,9 +24,9 @@ const FlashFireHome = () => {
       <HomePageMilestones /> {/* using useState, so client */}
       <HomePageSteps />
       <HomePageOfferLetters /> {/* using useState, so client */}
-      <HomePageWhyChooseFF />
-      <HomePageHappyUsers />
-      <HomePagePTNote />
+      <HomePageWhyChooseFF /> {/* AJ section not so good */}
+      <HomePageHappyUsers /> {/* pending */}
+      <HomePagePTNote /> {/* PT section not so good */}
       <HomePagePricingPlans />
       <HomePageFAQ /> {/* using useState, so client */}
       <HomePageFoundersNote />

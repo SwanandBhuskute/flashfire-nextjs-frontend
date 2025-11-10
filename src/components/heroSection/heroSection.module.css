@@ -108,12 +108,11 @@
 
 /* === Universities Section === */
 .heroUniversityContainer {
-  margin-top: 3rem;
   text-align: center;
   overflow: hidden;
   background: #fff;
-  width: 60%;
-  margin: 0 auto;
+  width: 70%;
+  margin: 0 auto 2rem;
 }
 
 .heroUniversityHeading {
@@ -189,8 +188,21 @@
 
 /* === Responsive === */
 @media (max-width: 768px) {
+  .heroBadges {
+    flex-direction: row;
+  }
+
+  .heroBadgeItem {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+
   .heroHeadline {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
+    width: 100%;
+    color: #000;
   }
 
   .heroDescription {
@@ -203,6 +215,12 @@
 
   .heroUniversityWrapper {
     max-width: 95%;
+  }
+
+  .heroUniversityContainer {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   .universityLogo {

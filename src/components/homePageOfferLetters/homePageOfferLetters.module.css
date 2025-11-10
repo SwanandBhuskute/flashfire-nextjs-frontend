@@ -11,6 +11,7 @@
   font-size: 2.4rem;
   font-weight: 700;
   margin-bottom: 3rem;
+  line-height: 1.2;
 }
 
 /* === Marquee Wrapper === */
@@ -41,11 +42,19 @@
   position: relative;
   min-width: 260px;
   height: 380px;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   overflow: hidden;
   background-color: #fff;
   flex: 0 0 auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.offerCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
 .imagePlaceholder {
@@ -88,7 +97,7 @@
 }
 
 .name {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
   margin: 0;
 }
@@ -106,16 +115,97 @@
   border-radius: 0.2rem;
   padding: 0.2rem 0.3rem;
   color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.linkedinIcon:hover {
+  background-color: #fff;
+  color: #000;
 }
 
 /* === Responsive === */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .offerHeading {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .offerCard {
-    min-width: 220px;
-    height: 320px;
+    min-width: 240px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offerSection {
+    padding: 4rem 1.5rem;
+  }
+
+  .offerHeading {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .offerMarquee {
+    gap: 1rem;
+    animation-duration: 30s; /* slightly slower for small screens */
+  }
+
+  .offerCard {
+    min-width: 200px;
+    height: 300px;
+    border-radius: 0.5rem;
+  }
+
+  .offerOverlay {
+    height: 50px;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .avatar {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .name {
+    font-size: 0.85rem;
+  }
+
+  .company {
+    font-size: 0.75rem;
+  }
+
+  .linkedinIcon {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .offerSection {
+    padding: 3rem 1rem;
+  }
+
+  .offerHeading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .offerCard {
+    min-width: 170px;
+    height: 260px;
+  }
+
+  .offerOverlay {
+    height: 45px;
+  }
+
+  .name {
+    font-size: 0.8rem;
+  }
+
+  .company {
+    font-size: 0.7rem;
   }
 }

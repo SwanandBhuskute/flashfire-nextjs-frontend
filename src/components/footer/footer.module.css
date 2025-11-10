@@ -54,11 +54,11 @@
 }
 
 .linkRow h4 {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: #fff7f4;
-  width: 150px;
+  width: 10rem;
   flex-shrink: 0;
 }
 
@@ -70,7 +70,6 @@
 
 .linkItems a {
   color: #fff;
-  opacity: 0.85;
   font-size: 0.9rem;
   text-decoration: none;
   transition: opacity 0.2s ease;
@@ -126,6 +125,12 @@
 
   .linksContainer {
     width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .linkItems {
+    flex-direction: column;
   }
 
   .linkRow {

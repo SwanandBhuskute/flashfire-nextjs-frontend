@@ -18,7 +18,7 @@ export default function HomePageWhyChooseFF() {
 
       {/* === Feature Grid === */}
       <div className={styles.featureGrid}>
-        <article className={styles.featureCard}>
+        <article className={`${styles.featureCard} ${styles.featureCard1}`}>
           <h3>Lightning Fast Applications</h3>
           <p>
             A dedicated team of 4–5 people handles your job hunt, applying to
@@ -27,7 +27,7 @@ export default function HomePageWhyChooseFF() {
           </p>
         </article>
 
-        <article className={styles.featureCard}>
+        <article className={`${styles.featureCard} ${styles.featureCard2}`}>
           <h3>Dynamic Resume Optimization</h3>
           <p>
             We build your base resume from scratch and tailor it for each job,
@@ -35,7 +35,7 @@ export default function HomePageWhyChooseFF() {
           </p>
         </article>
 
-        <article className={styles.featureCard}>
+        <article className={`${styles.featureCard} ${styles.featureCard3}`}>
           <h3>LinkedIn Profile Optimization</h3>
           <p>
             We professionally optimize your LinkedIn profile to boost recruiter
@@ -43,7 +43,7 @@ export default function HomePageWhyChooseFF() {
           </p>
         </article>
 
-        <article className={styles.featureCard}>
+        <article className={`${styles.featureCard} ${styles.featureCard4}`}>
           <h3>Dashboard & Analytics</h3>
           <p>
             Access a personalized dashboard to track applications, monitor
@@ -52,7 +52,7 @@ export default function HomePageWhyChooseFF() {
           </p>
         </article>
 
-        <article className={styles.featureCard}>
+        <article className={`${styles.featureCard} ${styles.featureCard5}`}>
           <h3>Precision Targeting</h3>
           <p>
             We only apply to jobs that fit your pay, location, company size, and
@@ -60,7 +60,7 @@ export default function HomePageWhyChooseFF() {
           </p>
         </article>
 
-        <article className={styles.featureCard}>
+        <article className={`${styles.featureCard} ${styles.featureCard6}`}>
           <h3>AI-Powered Matching</h3>
           <p>
             For each and every application, your base resume is automatically

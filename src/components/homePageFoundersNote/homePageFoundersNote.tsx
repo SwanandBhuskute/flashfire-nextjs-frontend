@@ -18,7 +18,7 @@ export default function HomePageFoundersNote() {
             to wonder if it’s you. Especially in the U.S., where hundreds apply
             for the same role, even the most talented people begin to lose hope.
           </p>
-
+          <br />
           <p>
             Flashfire was born from that same feeling. I watched my sister,
             smart, capable, and hardworking, apply to hundreds of roles and
@@ -38,10 +38,14 @@ export default function HomePageFoundersNote() {
             up, he decided to help build a better way forward.
           </p>
 
+          <br />
+
           <p>
             Together, we started building Flashfire with belief, empathy, and
             persistence.
           </p>
+
+          <br />
 
           <p>
             What began as a way to help one person is now helping hundreds.

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
 import styles from "./homePageMilestones.module.css";
 import {
   FaMicrosoft,
@@ -14,67 +13,79 @@ import { RiTwitterXLine } from "react-icons/ri";
 
 export default function HomePageMilestonesClient() {
   const footerCompanies = [
-    { name: "Microsoft", icon: <FaMicrosoft /> },
-    { name: "Amazon", icon: <FaAmazon /> },
-    { name: "Google", icon: <FaGoogle /> },
-    { name: "Apple", icon: <FaApple /> },
-    { name: "Meta", icon: <FaFacebook /> },
-    { name: "Netflix", icon: <SiNetflix /> },
-    { name: "Tesla", icon: <SiTesla /> },
-    { name: "Twitter (X)", icon: <RiTwitterXLine /> },
+    { name: "Microsoft", icon: <FaMicrosoft color="#0078D4" /> },
+    { name: "Amazon", icon: <FaAmazon color="#FF9900" /> },
+    { name: "Google", icon: <FaGoogle color="#4285F4" /> },
+    { name: "Apple", icon: <FaApple color="#555555" /> },
+    { name: "Meta", icon: <FaFacebook color="#1877F2" /> },
+    { name: "Netflix", icon: <SiNetflix color="#E50914" /> },
+    { name: "Tesla", icon: <SiTesla color="#CC0000" /> },
+    { name: "Twitter (X)", icon: <RiTwitterXLine color="#000000" /> },
   ];
 
   const testimonials = [
-    "Flashfire helped me land 3 interviews in under a week. Unbelievable!Flashfire helped me land 3 interviews in under a week. Unbelievable!",
-    "The AI resume booster works like magic — recruiters started replying fast!Flashfire helped me land 3 interviews in under a week. Unbelievable!Flashfire helped me land 3 interviews in under a week. Unbelievable!",
-    "I cracked my Google interview thanks to the preparation modules. Flashfire helped me land 3 interviews in under a week. Unbelievable!Flashfire helped me land 3 interviews in under a week. Unbelievable!",
-    "The dashboard keeps me accountable and saves me hours every day. Flashfire helped me land 3 interviews in under a week. Unbelievable!Flashfire helped me land 3 interviews in under a week. Unbelievable!Flashfire helped me land 3 interviews in under a week. Unbelievable!",
-    "It’s the smartest tool for job seekers. Just use it — worth every second.Flashfire helped me land 3 interviews in under a week. Unbelievable!Flashfire helped me land 3 interviews in under a week. Unbelievable!Flashfire helped me land 3 interviews in under a week. Unbelievable!",
+    {
+      company: "Google",
+      text: "Flashfire guided me through my entire application process — I landed interviews at Google and Meta within 10 days!",
+      user: "Arjun Sharma",
+      role: "SWE Intern",
+    },
+    {
+      company: "Amazon",
+      text: "The resume booster and job tracker saved me hours daily. Got an Amazon offer in just 3 weeks!",
+      user: "Sophia Patel",
+      role: "Software Engineer",
+    },
+    {
+      company: "Microsoft",
+      text: "From job search chaos to clarity — I received 4 interview calls in my first week using Flashfire!",
+      user: "Ravi Kumar",
+      role: "Full Stack Developer",
+    },
+    {
+      company: "Netflix",
+      text: "Loved how the AI personalizes my applications — landed at Netflix as a Product Analyst!",
+      user: "Nisha Jain",
+      role: "Product Analyst",
+    },
+    {
+      company: "Tesla",
+      text: "Flashfire made everything structured and automated — helped me secure Tesla interviews easily!",
+      user: "Karan Mehta",
+      role: "Mechanical Engineer",
+    },
   ];
-
-  const [activeIndex, setActiveIndex] = useState(1); // start from first real slide
-  const [, setIsTransitioning] = useState(true);
-  const trackRef = useRef<HTMLDivElement | null>(null);
-
-  // Create cloned array (last → first clones)
-  const extendedTestimonials = [
-    testimonials[testimonials.length - 1],
-    ...testimonials,
-    testimonials[0],
-  ];
-
-  // Auto-scroll every 3 sec
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => prev + 1);
-      setIsTransitioning(true);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Handle looping jump
-  useEffect(() => {
-    if (!trackRef.current) return;
-
-    if (activeIndex === extendedTestimonials.length - 1) {
-      // reached last (clone of first)
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setActiveIndex(1); // jump to first real
-      }, 800);
-    }
-
-    if (activeIndex === 0) {
-      // reached first (clone of last)
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setActiveIndex(extendedTestimonials.length - 2); // jump to last real
-      }, 800);
-    }
-  }, [activeIndex, extendedTestimonials.length]);
 
   return (
     <section className={styles.milestoneContainer}>
+      {/* === Section Heading === */}
+      <h4 className={styles.sectionHeading}>INTERVIEWS CRACKED BY OUR USERS</h4>
+
+      {/* === Continuous Marquee Testimonials === */}
+      <div className={styles.marqueeContainer}>
+        <div className={styles.marqueeTrack}>
+          {[...testimonials, ...testimonials].map((t, i) => {
+            const company = footerCompanies.find((c) => c.name === t.company);
+            return (
+              <div key={i} className={styles.marqueeCard}>
+                <div className={styles.companyHeader}>
+                  <div className={styles.companyLogoIcon}>{company?.icon}</div>
+                  <p className={styles.companyName}>{t.company}</p>
+                </div>
+                <p className={styles.testimonialText}>{t.text}</p>
+                <div className={styles.userInfo}>
+                  <div className={styles.userAvatar}></div>
+                  <div>
+                    <p className={styles.userName}>{t.user}</p>
+                    <p className={styles.userCompany}>{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
       {/* === Top Stats Cards === */}
       <div className={styles.statsContainer}>
         <div className={styles.statCard}>
@@ -91,12 +102,12 @@ export default function HomePageMilestonesClient() {
         <div className={styles.statCard}>
           <div className={styles.iconPlaceholder}>📄</div>
           <h3>
-            <span className={styles.highlight}>300k+</span> Application Sent
+            <span className={styles.highlight}>300k+</span> Applications Sent
             Smartly
           </h3>
           <p>
-            100k+ applications optimized with ATS resumes for maximum visibility
-            and callbacks.
+            Over 300k applications optimized with ATS-friendly resumes and
+            custom cover letters.
           </p>
         </div>
 
@@ -104,61 +115,16 @@ export default function HomePageMilestonesClient() {
           <div className={styles.iconPlaceholder}>⏰</div>
           <h3>
             <span className={styles.highlight}>1 Week</span> to Your First
-            Interview Call
+            Interview
           </h3>
           <p>
-            With Flashfire AI Members get their first interview call in just 7
-            days.
+            Flashfire users report getting interview calls within their first 7
+            days of usage.
           </p>
         </div>
       </div>
 
-      {/* === Divider Title === */}
-      <h4 className={styles.sectionHeading}>INTERVIEW CRACKED</h4>
-
-      {/* === Infinite Carousel === */}
-      <div className={styles.testimonialCarousel}>
-        <div
-          // ref={trackRef}
-          className={styles.carouselTrack}
-          // style={{
-          //   transform: `translateX(-${activeIndex * 100}%)`,
-          //   transition: isTransitioning ? "transform 0.8s ease-in-out" : "none",
-          // }}
-        >
-          {extendedTestimonials.map((text, i) => (
-            <div
-              key={i}
-              className={`${styles.testimonialCard} ${
-                i === activeIndex ? styles.testimonialActive : ""
-              }`}
-            >
-              <div className={styles.companyHeader}>
-                <div className={styles.companyLogoIcon}>
-                  {footerCompanies[i % footerCompanies.length].icon}
-                </div>
-                <p className={styles.companyName}>
-                  {footerCompanies[i % footerCompanies.length].name}
-                </p>
-              </div>
-
-              <p className={styles.testimonialText}>{text}</p>
-
-              <div className={styles.userInfo}>
-                <div className={styles.userAvatar}></div>
-                <div>
-                  <p className={styles.userName}>Vee</p>
-                  <p className={styles.userCompany}>
-                    {footerCompanies[i % footerCompanies.length].name}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* === Footer Company Logos === */}
+      {/* === Footer Logos === */}
       <div className={styles.footerLogos}>
         {footerCompanies.map((company, i) => (
           <span key={i}>

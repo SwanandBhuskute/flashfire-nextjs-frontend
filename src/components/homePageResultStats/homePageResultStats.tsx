@@ -4,6 +4,18 @@ import styles from "./homePageResultStats.module.css";
 export default function HomePageResultStats() {
   return (
     <section className={styles.resultSection}>
+      {/* Right Side (Image first in HTML so it appears on top on mobile) */}
+      <div className={styles.resultRight}>
+        <Image
+          src="/images/heroResultImage.jpg"
+          alt="Interview illustration"
+          className={styles.resultImage}
+          width={700}
+          height={700}
+          priority
+        />
+      </div>
+
       {/* Left Side */}
       <div className={styles.resultLeft}>
         <p className={styles.resultTagline}>RESULT THAT SPEAKS</p>
@@ -36,18 +48,6 @@ export default function HomePageResultStats() {
         </p>
 
         <button className={styles.resultButton}>Get Me Interview →</button>
-      </div>
-
-      {/* Right Side */}
-      <div className={styles.resultRight}>
-        <Image
-          src="/images/heroResultImage.jpg"
-          alt="Interview illustration"
-          className={styles.resultImage}
-          width={700}
-          height={700}
-          priority
-        />
       </div>
     </section>
   );

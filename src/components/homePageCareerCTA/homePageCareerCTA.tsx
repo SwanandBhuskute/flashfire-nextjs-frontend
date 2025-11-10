@@ -45,21 +45,21 @@ export default function HomePageCareerCTA() {
             <div className={styles.userNote}>
               <div className={styles.userAvatars}>
                 <Image
-                  src="/user1.jpg"
+                  src="/images/user1.jpg"
                   alt="user1"
                   width={28}
                   height={28}
                   className={styles.avatar}
                 />
                 <Image
-                  src="/user2.jpg"
+                  src="/images/user2.jpg"
                   alt="user2"
                   width={28}
                   height={28}
                   className={styles.avatar}
                 />
                 <Image
-                  src="/user3.jpg"
+                  src="/images/user3.jpg"
                   alt="user3"
                   width={28}
                   height={28}

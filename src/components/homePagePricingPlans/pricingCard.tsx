@@ -28,7 +28,14 @@ export default function PricingCard({
 }: PricingCardProps) {
   return (
     <div className={`${styles.card} ${highlight ? styles.highlightCard : ""}`}>
-      {tag && <div className={styles.tag}>{tag}</div>}
+      {tag && (
+        <div
+          className={styles.tag}
+          data-tag-type={tag === "MOST POPULAR" ? "popular" : "default"}
+        >
+          {tag}
+        </div>
+      )}
 
       <h4 className={styles.planTitle}>{title}</h4>
       <h2 className={styles.appCount}>{subTitle}</h2>
