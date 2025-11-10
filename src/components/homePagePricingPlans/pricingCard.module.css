@@ -1,0 +1,154 @@
+.card {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 0.1rem;
+  padding: 2rem;
+  flex: 1;
+  max-width: 25rem;
+  min-width: 22rem;
+  text-align: left;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.highlightCard {
+  border: 2px solid #ff4c00;
+}
+
+.tag {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+}
+
+.planTitle {
+  color: #ff4c00;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.appCount {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.subText {
+  color: #000;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardHR {
+  margin: -0.4rem 0 0.8rem;
+  color: #000;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  min-height: 12rem;
+}
+
+.featuresList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  color: #ff4c00;
+  font-size: 0.9rem;
+}
+
+/* === Add-On Section === */
+.addOnSection {
+  background: #edecec;
+  border: 1px solid #f3dfd5;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  /* width: 99%; */
+}
+
+.addOnSection h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #000;
+}
+
+.addOnSection p {
+  font-size: 0.85rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.addOnSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* === Pricing === */
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.priceRow h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.oldPrice {
+  font-size: 1rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.totalIncluded {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+/* === CTA === */
+.ctaButton {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 0.4rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #111;
+}

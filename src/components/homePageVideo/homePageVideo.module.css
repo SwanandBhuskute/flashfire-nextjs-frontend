@@ -9,12 +9,57 @@
 .videoWrapper {
   position: relative;
   width: 80%;
-  max-width: 960px;
   aspect-ratio: 16 / 9;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
+  padding: 0.3rem;
   overflow: hidden;
-  background-color: #000;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background-color: #fff6f4;
+  /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); */
+}
+
+/* === Sharp Orange Corner Borders === */
+.videoWrapper::before,
+.videoWrapper::after,
+.videoWrapper span::before,
+.videoWrapper span::after {
+  content: "";
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 0.15rem solid #ff4c00;
+  pointer-events: none;
+}
+
+/* Top-left */
+.videoWrapper::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Top-right */
+.videoWrapper::after {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+/* Bottom-left */
+.videoWrapper span::before {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none;
+}
+
+/* Bottom-right */
+.videoWrapper span::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
 }
 
 .videoPlayer {
@@ -23,14 +68,4 @@
   object-fit: cover;
   border: none;
   display: block;
-}
-
-.videoCaption {
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #444;
-  font-weight: 500;
-  text-align: center;
-  max-width: 600px;
-  line-height: 1.5;
 }

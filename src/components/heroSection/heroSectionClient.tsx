@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import Image from "next/image";
 import styles from "./heroSection.module.css";
 import { HeroSectionData } from "@/src/types/heroSectionData";
 
@@ -10,22 +10,6 @@ type Props = {
 };
 
 export default function HeroSectionClient({ data }: Props) {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  // Auto-scroll university strip
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    let scrollPos = 0;
-    const animate = () => {
-      scrollPos += 1;
-      if (scrollPos >= el.scrollWidth / 2) scrollPos = 0;
-      el.scrollLeft = scrollPos;
-      requestAnimationFrame(animate);
-    };
-    animate();
-  }, []);
-
   return (
     <section className={styles.heroContainer}>
       {/* === Top Badges === */}
@@ -46,17 +30,24 @@ export default function HeroSectionClient({ data }: Props) {
       {/* === Description === */}
       <p className={styles.heroDescription}>{data.description}</p>
 
-      {/* === CTA === */}
+      {/* === CTA Button === */}
       <Link href={data.cta.href} className={styles.heroCTAButton}>
         {data.cta.label}
       </Link>
 
-      {/* === Trusted by 260+ Users === */}
+      {/* === Trusted Users === */}
       <div className={styles.heroUserTrust}>
         <div className={styles.heroUserIcons}>
-          <div className={styles.heroUserCircle}></div>
-          <div className={styles.heroUserCircle}></div>
-          <div className={styles.heroUserCircle}></div>
+          {["user1.jpg", "user2.jpg", "user3.jpg"].map((img, i) => (
+            <div key={i} className={styles.heroUserCircleWrapper}>
+              <Image
+                src={`/images/${img}`}
+                alt={`User ${i + 1}`}
+                fill
+                className={styles.heroUserCircle}
+              />
+            </div>
+          ))}
         </div>
         <p className={styles.heroUserText}>{data.trustText}</p>
       </div>
@@ -64,12 +55,22 @@ export default function HeroSectionClient({ data }: Props) {
       {/* === Universities Section === */}
       <div className={styles.heroUniversityContainer}>
         <p className={styles.heroUniversityHeading}>{data.universityHeading}</p>
-        <div ref={scrollRef} className={styles.heroUniversityStrip}>
-          {data.universities.map((name: string) => (
-            <div key={name} className={styles.heroUniversityCard}>
-              {name}
-            </div>
-          ))}
+
+        <div className={styles.heroUniversityWrapper}>
+          <div className={styles.heroUniversityStrip}>
+            {[...data.universities, ...data.universities].map((uni, index) => (
+              <div key={index} className={styles.heroUniversityCard}>
+                <Image
+                  src={`https://logo.clearbit.com/${uni.domain}`}
+                  alt={uni.name}
+                  width={120}
+                  height={70}
+                  className={styles.universityLogo}
+                />
+                <p className={styles.heroUniversityStripUniName}>{uni.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

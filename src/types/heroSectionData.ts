@@ -6,5 +6,8 @@ export interface HeroSectionData {
   cta: { label: string; href: string };
   trustText: string;
   universityHeading: string;
-  universities: string[];
+  universities: {
+    name: string;
+    domain: string;
+  }[];
 }

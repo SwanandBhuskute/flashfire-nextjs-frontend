@@ -32,7 +32,7 @@ export default function HomePageOfferLettersClient() {
               {/* Replace this block image later */}
               <div className={styles.imagePlaceholder}>
                 <Image
-                  src="/offer-placeholder.jpg"
+                  src="/images/offer-placeholder.jpg"
                   alt={`Offer Letter ${i}`}
                   width={300}
                   height={400}
@@ -59,7 +59,7 @@ export default function HomePageOfferLettersClient() {
             <div key={`dup-${i}`} className={styles.offerCard}>
               <div className={styles.imagePlaceholder}>
                 <Image
-                  src="/offer-placeholder.jpg"
+                  src="/images/offer-placeholder.jpg"
                   alt={`Offer Letter ${i}`}
                   width={300}
                   height={400}

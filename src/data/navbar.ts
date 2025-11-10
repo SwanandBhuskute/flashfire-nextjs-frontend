@@ -6,11 +6,11 @@ export const navbarLinks: NavLink[] = [
   { name: "Testimonials", href: "#testimonials" },
   { name: "Pricing", href: "#pricing" },
   { name: "FAQ", href: "#faq" },
-  { name: "Blog", href: "/blog" },
+  { name: "Blog", href: "/blogs" },
   { name: "Employees", href: "#employees" },
 ];
 
 export const navbarCTAs: NavbarCTA = {
-  primary: { label: "Get Me Interview →", href: "/signup" },
+  primary: { label: "Get Me Interview →", href: "/contact-us" },
   secondary: { label: "See Flashfire in Action →", href: "#demo" },
 };
