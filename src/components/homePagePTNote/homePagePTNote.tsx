@@ -11,24 +11,26 @@ export default function HomePagePTNote() {
           <p className={styles.tagline}>HELPING 100+ JOB SEEKERS</p>
 
           <blockquote className={styles.quote}>
-            “ Every line of code we write is to help someone hear back –
-            finally. ”
+            “Every line of code we write is to help someone hear back -
+            finally.”
           </blockquote>
 
           <div className={styles.authorRow}>
             <div className={styles.authorInfo}>
               <p className={styles.authorName}>Pranjal Tripathi</p>
-              <p className={styles.authorRole}>CTO</p>
+              <p className={styles.authorRole}>CTO </p>
             </div>
-
+            <p className={styles.pipe}>|</p>
             <div className={styles.brandLogo}>
               <Image
                 src="/images/flashfire-logo-white.png"
                 alt="Flashfire Logo"
-                width={100}
-                height={28}
+                width={20}
+                height={20}
+                className={styles.brandLogoImg}
               />
             </div>
+            <div className={styles.brandLogoText}>Flashfire</div>
           </div>
 
           <div className={styles.authorImage}>

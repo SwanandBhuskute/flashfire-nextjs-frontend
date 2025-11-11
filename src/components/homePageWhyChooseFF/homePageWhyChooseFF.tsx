@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HomePageWhyChooseFF() {
   return (
-    <section className={styles.whySection}>
+    <section id="feature" className={styles.whySection}>
       {/* === Header === */}
       <header className={styles.header}>
         <h2 className={styles.title}>Why Choose Flashfire?</h2>

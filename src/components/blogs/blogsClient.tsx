@@ -2,6 +2,7 @@
 
 import styles from "./blogs.module.css";
 import BlogCard from "./blogCard";
+import { blogPosts } from "@/src/data/blogsData";
 
 export default function BlogsClient() {
   return (
@@ -17,8 +18,8 @@ export default function BlogsClient() {
       </header>
 
       <div className={styles.blogGrid}>
-        {[...Array(6)].map((_, index) => (
-          <BlogCard key={index} />
+        {blogPosts.map((blog) => (
+          <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
     </section>

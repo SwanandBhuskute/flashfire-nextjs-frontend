@@ -4,49 +4,61 @@ import styles from "./blogCard.module.css";
 import Image from "next/image";
 import { FaRegClock } from "react-icons/fa";
 import { BsCalendarEvent } from "react-icons/bs";
+import Link from "next/link";
 
-export default function BlogCard() {
+type Blog = {
+  id: number;
+  slug?: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  category: string;
+  image: string;
+  categoryColor?: string;
+};
+
+export default function BlogCard({ blog }: { blog: Blog }) {
   return (
     <section className={styles.blogCardOuter}>
-      <section className={styles.blogCard}>
+      <Link href={`/blog/${blog.slug}`} className={styles.blogCard}>
+        {/* === Image === */}
         <div className={styles.imageWrapper}>
           <Image
-            src="/images/blogImg.jpg"
-            alt="Blog cover"
+            src={blog.image}
+            alt={blog.title}
             width={400}
             height={250}
             className={styles.image}
           />
         </div>
 
+        {/* === Content === */}
         <div className={styles.content}>
-          <p className={styles.tag}>RESUME TIP</p>
-          <h3 className={styles.title}>
-            Why Your Job Applications in the U.S. Are Getting Ghosted — And How
-            to Finally Break the Silence
-          </h3>
-          <p className={styles.excerpt}>
-            For each and every application, your base resume is automatically
-            optimized to the job description with ATS-friendly keywords and
-            skills.
+          <p className={`${styles.tag} ${blog.categoryColor}`}>
+            {blog.category.toUpperCase()}
           </p>
+
+          <h3 className={styles.title}>{blog.title}</h3>
+
+          <p className={styles.excerpt}>{blog.excerpt}</p>
 
           <div className={styles.meta}>
             <span>
               <div className={styles.metaSpanDiv}>
                 <BsCalendarEvent className={styles.icon} />
-                <p> JAN 2025</p>
+                <p>{blog.date}</p>
               </div>
             </span>
             <span>
               <div className={styles.metaSpanDiv}>
                 <FaRegClock className={styles.icon} />
-                <p>12 MIN READ</p>
+                <p>{blog.readTime.toUpperCase()} READ</p>
               </div>
             </span>
           </div>
         </div>
-      </section>
+      </Link>
     </section>
   );
 }

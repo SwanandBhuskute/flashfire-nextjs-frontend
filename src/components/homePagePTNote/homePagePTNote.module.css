@@ -32,14 +32,14 @@
 }
 
 .tagline {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: #ff8a58;
+  color: #94959a;
   margin-bottom: 1.5rem;
 }
 
 .quote {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-style: italic;
   line-height: 1.6;
   font-weight: 400;
@@ -49,13 +49,14 @@
 
 .authorRow {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .authorInfo {
   display: flex;
   flex-direction: column;
+  margin-right: 1.3rem;
 }
 
 .authorName {
@@ -69,21 +70,39 @@
   color: #aaa;
 }
 
-.brandLogo img {
-  filter: brightness(100%);
+.pipe {
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0 1rem;
+}
+
+.brandLogoImg {
+  width: 100%;
+  border: 1px solid white;
+}
+
+.brandLogoText {
+  color: white;
+  font-weight: 600;
+  margin-left: 0.5rem;
 }
 
 .authorImage {
   position: absolute;
   bottom: 0;
   right: 1.5rem;
+  overflow: hidden; /* ensures fade stays inside container */
 }
 
 .profileImage {
   border-radius: 0.6rem;
   object-fit: cover;
-}
+  display: block;
 
+  /* Fade out bottom using mask gradient */
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
 /* === RIGHT WHATSAPP CARD === */
 .whatsappCard {
   position: relative;

@@ -25,15 +25,18 @@
 /* === Image === */
 .imageWrapper {
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9; /* Ensures uniform height ratio */
   overflow: hidden;
+  position: relative;
+  background-color: #f9f9f9;
 }
 
 .image {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; /* Crops excess while keeping uniform size */
   transition: transform 0.3s ease;
+  display: block;
 }
 
 /* .blogCard:hover .image {
@@ -95,5 +98,9 @@
 @media (max-width: 768px) {
   .blogCard {
     max-width: 100%;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 16 / 10; /* slightly taller for mobile readability */
   }
 }

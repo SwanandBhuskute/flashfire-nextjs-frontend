@@ -7,7 +7,7 @@ export const navbarLinks: NavLink[] = [
   { name: "Pricing", href: "#pricing" },
   { name: "FAQ", href: "#faq" },
   { name: "Blog", href: "/blogs" },
-  { name: "Employees", href: "#employees" },
+  { name: "Employees", href: "#contact-us" },
 ];
 
 export const navbarCTAs: NavbarCTA = {

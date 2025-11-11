@@ -2,7 +2,7 @@ import styles from "./homePageVideo.module.css";
 
 export default function HomePageVideo() {
   return (
-    <section className={styles.videoContainer}>
+    <section id="demo" className={styles.videoContainer}>
       <div className={styles.videoWrapper}>
         <video
           className={styles.videoPlayer}

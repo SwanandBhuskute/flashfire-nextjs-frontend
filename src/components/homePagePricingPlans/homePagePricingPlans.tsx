@@ -3,7 +3,7 @@ import PricingCard from "./pricingCard";
 
 export default function HomePagePricingPlans() {
   return (
-    <section className={styles.pricingSection}>
+    <section id="pricing" className={styles.pricingSection}>
       <div className={styles.header}>
         <h2>Choose Your Career Acceleration Plan</h2>
         <p>

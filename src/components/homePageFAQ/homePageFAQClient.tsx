@@ -14,7 +14,7 @@ export default function HomePageFAQClient() {
   };
 
   return (
-    <section className={styles.faqSection}>
+    <section id="faq" className={styles.faqSection}>
       <div className={styles.header}>
         <h2>Question? We Got You Answers.</h2>
         <p>
